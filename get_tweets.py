@@ -12,9 +12,10 @@ def get_tweets(search_words, date_since, cnt):
 
     return tweets_list
 
-# example:
-# define search term and date_since and count as variables.
-search_words = '#Trump'
-date_since = '2019-05-01'
-cnt = 15
-tweets = get_tweets(search_words, date_since, cnt)
+if __name__ == '__main__':
+    # example:
+    # define search term and date_since and count as variables.
+    search_words = '#Trump'
+    date_since = '2019-05-01'
+    cnt = 15
+    tweets = get_tweets(search_words, date_since, cnt)

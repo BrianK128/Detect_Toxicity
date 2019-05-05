@@ -36,11 +36,20 @@ def det_tox(text):
 
     return p_n
 
-from get_tweets import get_tweets
-
-search_words = '#Trump'
-date_since = '2019-05-01'
-
-tweets = get_tweets(search_words, date_since, 15)   
-pred = det_tox(tweets)     
-
+if __name__ == '__main__':
+    # example using det_tox and get_tweets:
+    from get_tweets import get_tweets
+    
+    search_words = 'dumb'
+    date_since = '2019-05-01'
+    
+    tweets = get_tweets(search_words, date_since, 15)   
+    pred = det_tox(tweets)     
+    
+    # print out toxic tweets and labels.
+    for p in range(len(pred)):
+        if pred[p]:
+            print('\n Tweet number: ', p)
+            print('Tweet Content: ', tweets[p])
+            print('Toxic labels: ', pred[p])
+            
